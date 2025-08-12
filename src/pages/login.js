@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Login() {
   const router = useRouter();
@@ -89,7 +90,7 @@ export default function Login() {
             </button>
 
             <p className="text-center mt-3">
-              Don't have an account? <a href="/signup">Signup</a>
+              Don't have an account? <Link href="/signup">Signup</Link>
             </p>
           </form>
         </div>
