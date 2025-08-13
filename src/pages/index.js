@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from 'next/link';
 
 export default function Home() {
   const [headlines, setHeadlines] = useState([]);
@@ -55,8 +56,8 @@ export default function Home() {
           <p className="text-muted">A Student-to-Student Skill Exchange Platform <br /> Exclusively for Bayero University Kano</p>
 
           <div className="mt-4 d-flex justify-content-center gap-3 flex-wrap">
-            <a href="/signup" className="btn btn-primary btn-lg px-4">Get Started</a>
-            <a href="/login" className="btn btn-outline-primary btn-lg px-4">Login</a>
+            <Link href="/signup" className="btn btn-primary btn-lg px-4">Get Started</Link>
+            <Link href="/login" className="btn btn-outline-primary btn-lg px-4">Login</Link>
           </div>
         </div>
 
