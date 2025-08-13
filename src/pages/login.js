@@ -90,7 +90,7 @@ export default function Login() {
             </button>
 
             <p className="text-center mt-3">
-              Don't have an account? <Link href="/signup">Signup</Link>
+              Don`t have an account? <Link href="/signup">Signup</Link>
             </p>
           </form>
         </div>
