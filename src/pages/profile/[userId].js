@@ -47,7 +47,7 @@ export default function StudentProfile() {
 
       <h4 className="mt-4">🛠 Posted Skills</h4>
       {skills.length === 0 ? (
-        <p>This student hasn't posted any skills yet.</p>
+        <p>This student hasn`t posted any skills yet.</p>
       ) : (
         <div className="row mt-3">
           {skills.map((skill) => (
