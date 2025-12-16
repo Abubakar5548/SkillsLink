@@ -53,7 +53,7 @@ export default function Home() {
         <div className="text-center mb-5">
           <img src="/buk-logo.jpg" alt="BUK Logo" width="90" />
           <h1 className="mt-3 text-primary fw-bold">Skills Link</h1>
-          <p className="text-muted">A Student-to-Student Skill Exchange Platform <br /> Exclusively for Bayero University Kano</p>
+          <p className="text-muted">A Student-to-Student Skill Exchange Platform <br /> Exclusively for Bayero University Kano Faculty Of Computing</p>
 
           <div className="mt-4 d-flex justify-content-center gap-3 flex-wrap">
             <Link href="/signup" className="btn btn-primary btn-lg px-4">Get Started</Link>
