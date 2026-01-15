@@ -3,19 +3,19 @@ import Head from "next/head";
 
 export default function CareerLearning() {
   const initialResources = [
-    { id: 1, title: "LinkedIn Jobs – Tech", category: "Job Portal", url: "https://www.linkedin.com/jobs/", lastUpdated: "2025-08-01" },
-    { id: 2, title: "Indeed – IT & Computer Jobs", category: "Job Portal", url: "https://www.indeed.com/q-IT-jobs.html", lastUpdated: "2025-07-28" },
-    { id: 3, title: "Stack Overflow Jobs", category: "Job Portal", url: "https://stackoverflow.com/jobs", lastUpdated: "2025-08-03" },
-    { id: 4, title: "Internshala – Tech Internships", category: "Internship", url: "https://internshala.com/", lastUpdated: "2025-07-30" },
-    { id: 5, title: "Google Summer of Code", category: "Internship", url: "https://summerofcode.withgoogle.com/", lastUpdated: "2025-08-02" },
-    { id: 6, title: "Microsoft Learn Student Ambassadors", category: "Internship", url: "https://studentambassadors.microsoft.com/", lastUpdated: "2025-08-05" },
+    { id: 1, title: "LinkedIn Jobs – Tech", category: "Job Portal", url: "https://www.linkedin.com/jobs/", lastUpdated: "2026-01-15" },
+    { id: 2, title: "Indeed – IT & Computer Jobs", category: "Job Portal", url: "https://www.indeed.com/q-IT-jobs.html", lastUpdated: "2026-01-19" },
+    { id: 3, title: "Stack Overflow Jobs", category: "Job Portal", url: "https://stackoverflow.com/jobs", lastUpdated: "2026-01-14" },
+    { id: 4, title: "Internshala – Tech Internships", category: "Internship", url: "https://internshala.com/", lastUpdated: "2026-01-15" },
+    { id: 5, title: "Google Summer of Code", category: "Internship", url: "https://summerofcode.withgoogle.com/", lastUpdated: "2026-01-15" },
+    { id: 6, title: "Microsoft Learn Student Ambassadors", category: "Internship", url: "https://studentambassadors.microsoft.com/", lastUpdated: "2026-01-20" },
     { id: 7, title: "freeCodeCamp", category: "Learning Resource", url: "https://www.freecodecamp.org/", lastUpdated: "2025-08-01" },
-    { id: 8, title: "Python.org Tutorials", category: "Learning Resource", url: "https://docs.python.org/3/tutorial/", lastUpdated: "2025-07-27" },
-    { id: 9, title: "W3Schools", category: "Learning Resource", url: "https://www.w3schools.com/", lastUpdated: "2025-08-04" },
-    { id: 10, title: "Coursera – Computer Science", category: "Learning Resource", url: "https://www.coursera.org/browse/computer-science", lastUpdated: "2025-07-25" },
-    { id: 11, title: "AWS Cloud Practitioner", category: "Certification", url: "https://aws.amazon.com/certification/certified-cloud-practitioner/", lastUpdated: "2025-08-06" },
-    { id: 12, title: "Google Cybersecurity Certificate", category: "Certification", url: "https://grow.google/certificates/cybersecurity/", lastUpdated: "2025-07-29" },
-    { id: 13, title: "Data Analytics with IBM", category: "Certification", url: "https://www.coursera.org/professional-certificates/ibm-data-analyst", lastUpdated: "2025-08-05" },
+    { id: 8, title: "Python.org Tutorials", category: "Learning Resource", url: "https://docs.python.org/3/tutorial/", lastUpdated: "2026-01-30" },
+    { id: 9, title: "W3Schools", category: "Learning Resource", url: "https://www.w3schools.com/", lastUpdated: "2026-01-24" },
+    { id: 10, title: "Coursera – Computer Science", category: "Learning Resource", url: "https://www.coursera.org/browse/computer-science", lastUpdated: "2026-01-23" },
+    { id: 11, title: "AWS Cloud Practitioner", category: "Certification", url: "https://aws.amazon.com/certification/certified-cloud-practitioner/", lastUpdated: "2026-01-25" },
+    { id: 12, title: "Google Cybersecurity Certificate", category: "Certification", url: "https://grow.google/certificates/cybersecurity/", lastUpdated: "2026-01-15" },
+    { id: 13, title: "Data Analytics with IBM", category: "Certification", url: "https://www.coursera.org/professional-certificates/ibm-data-analyst", lastUpdated: "2026-01-18" },
   ];
 
   const [resources, setResources] = useState(initialResources);
