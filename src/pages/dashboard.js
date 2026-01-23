@@ -8,6 +8,7 @@ export default function Dashboard() {
   const [regNumber, setRegNumber] = useState('');
   const [email, setEmail] = useState('');
   const adminReg = 'CST/21/COM/00707';
+  const [darkMode, setDarkMode] = useState(false);
 
   // Tech News State
   const [headlines, setHeadlines] = useState([]);
@@ -65,122 +66,244 @@ export default function Dashboard() {
   }, [headlines]);
 
   return (
-    <>
-      <Head>
-        <title>SkillLink – Dashboard</title>
-      </Head>
+  <>
+    <Head>
+      <title>SkillsLink – Dashboard</title>
+    </Head>
 
-      <div className="container py-5">
-        <div className="text-center mb-5">
-          <img src="/buk-logo.jpg" alt="BUK Logo" width="70" />
-          <h2 className="mt-3 text-primary fw-bold">Welcome 👋</h2>
-          <p className="text-muted">Reg Number: <strong>{regNumber}</strong></p>
-          <p className="text-muted">Email: <strong>{email}</strong></p>
-        </div>
+    {/* ===== Dark Mode Wrapper ===== */}
+    <div className={`min-vh-100 ${darkMode ? 'dark-mode' : ''}`}>
+      <div
+        className="container-fluid py-5"
+        style={{
+          background: darkMode
+            ? 'linear-gradient(135deg, #0f172a, #020617)'
+            : 'linear-gradient(135deg, #f8f9ff, #eef2ff)'
+        }}
+      >
+        <div className="container">
 
-        <div className="row g-3 justify-content-center">
-          {/* 📚 Teach a Skill */}
-          <div className="col-6 col-md-2">
-            <div className="card shadow-sm border-0 h-100 text-center bg-light">
-              <div className="card-body">
-                <h5 className="card-title">📚 Teach</h5>
-                <p className="text-muted small">Post a computing skill.</p>
-                <Link href="/post-learnable-skill" className="btn btn-success btn-sm">Teach</Link>
-              </div>
+          {/* ===== Header Section ===== */}
+          <div className="d-flex justify-content-between align-items-center mb-4">
+            <div className="text-center w-100">
+              <img src="/buk-logo.jpg" alt="BUK Logo" width="80" className="mb-3" />
+              <h2 className="fw-bold">Welcome to SkillsLink 👋</h2>
+              <p className="text-muted mb-1">
+                Registration Number: <strong>{regNumber}</strong>
+              </p>
+              <p className="text-muted">
+                Email: <strong>{email}</strong>
+              </p>
             </div>
+
+            {/* 🌙 Dark Mode Toggle */}
+            <button
+              className="btn btn-sm btn-outline-secondary position-absolute end-0 me-3"
+              onClick={() => setDarkMode(!darkMode)}
+            >
+              {darkMode ? '☀️ Light' : '🌙 Dark'}
+            </button>
           </div>
 
-          {/* 📖 Learn a Skill */}
-          <div className="col-6 col-md-2">
-            <div className="card shadow-sm border-0 h-100 text-center bg-light">
-              <div className="card-body">
-                <h5 className="card-title">📖 Learn</h5>
-                <p className="text-muted small">Explore learnable skills.</p>
-                <Link href="/learnable-skills" className="btn btn-outline-success btn-sm">View</Link>
+          {/* ===== Quick Actions ===== */}
+          <h5 className="fw-semibold mb-3">Quick Actions</h5>
+
+          <div className="row g-4">
+
+            {/* Cards */}
+            {[
+              {
+                icon: '📚',
+                title: 'Teach a Skill',
+                desc: 'Upload PDF or learning links.',
+                link: '/post-learnable-skill',
+                btn: 'Teach',
+                color: 'success'
+              },
+              {
+                icon: '📖',
+                title: 'Learn Skills',
+                desc: 'Browse shared materials.',
+                link: '/learnable-skills',
+                btn: 'Explore',
+                color: 'outline-success'
+              },
+              {
+                icon: '👤',
+                title: 'My Teachings',
+                desc: 'Manage your uploads.',
+                link: '/my-learnable-skills',
+                btn: 'View',
+                color: 'outline-secondary'
+              },
+              {
+                icon: '💻',
+                title: 'Code Editor',
+                desc: 'Practice HTML, CSS & JS.',
+                link: '/code-editor',
+                btn: 'Open Editor',
+                color: 'outline-primary'
+              }
+            ].map((item, index) => (
+              <div key={index} className="col-6 col-md-3 slide-card">
+                <div className="card h-100 border-0 shadow-sm dashboard-card">
+                  <div className="card-body text-center">
+                    <div className="icon-circle mb-3">{item.icon}</div>
+                    <h6 className="fw-bold">{item.title}</h6>
+                    <p className="text-muted small">{item.desc}</p>
+                    <Link href={item.link} className={`btn btn-${item.color} btn-sm w-100`}>
+                      {item.btn}
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            ))}
 
-          {/* 👤 My Teachings */}
-          <div className="col-6 col-md-2">
-            <div className="card shadow-sm border-0 h-100 text-center">
-              <div className="card-body">
-                <h5 className="card-title">👤 My Teachings</h5>
-                <p className="text-muted small">Manage what you taught.</p>
-                <Link href="/my-learnable-skills" className="btn btn-outline-success btn-sm">Mine</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* 💻 Code Editor */}
-          <div className="col-6 col-md-2">
-            <div className="card shadow-sm border-0 h-100 text-center bg-light">
-              <div className="card-body">
-                <h5 className="card-title">💻 Code Editor</h5>
-                <p className="text-muted small">Write & run HTML/CSS/JS code.</p>
-                <Link href="/code-editor" className="btn btn-outline-primary btn-sm">Try Now</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* 🌟 Career & Learning Opportunities */}
-          <div className="col-6 col-md-2">
-            <div className="card shadow-sm border-0 h-100 text-center bg-light">
-              <div className="card-body">
-                <h5 className="card-title">🌟 Career & Learning</h5>
-                <p className="text-muted small">Jobs, internships & resources.</p>
-                <Link href="/career-learning" className="btn btn-info btn-sm">Explore</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* 📰 Tech News & Insights */}
-          <div className="col-12 col-md-4">
-            <div className="card shadow-sm border-0 h-100 text-center bg-light">
-              <div className="card-body">
-                <h5 className="card-title">📰 Tech News & Insights</h5>
-                <p className="text-muted small">Latest in AI, web dev, and more.</p>
-                <Link href="/tech-news" className="btn btn-outline-info btn-sm">Explore</Link>
-
-                {/* Breaking News Banner */}
-                {headlines.length > 0 && (
-                  <a
-                    href={headlines[currentIndex].url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="d-block mt-3 p-2 text-decoration-none"
-                    style={{
-                      background: '#fff5f5',
-                      borderRadius: '4px',
-                      border: '1px solid #f5c2c2'
-                    }}
-                  >
-                    <span className="badge bg-danger me-2">BREAKING</span>
-                    <strong style={{ color: '#b71c1c' }}>{headlines[currentIndex].title}</strong>
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* 👑 Admin Page */}
-          {regNumber === adminReg && (
-            <div className="col-6 col-md-2">
-              <div className="card shadow-sm border-0 h-100 text-center bg-warning-subtle">
+            {/* Career */}
+            <div className="col-12 col-md-6 slide-card">
+              <div className="card h-100 border-0 shadow-sm dashboard-card">
                 <div className="card-body">
-                  <h5 className="card-title text-danger">👑 Admin</h5>
-                  <p className="text-muted small">View and manage all posted skills.</p>
-                  <Link href="/admin-learnable-skills" className="btn btn-danger btn-sm">Admin Page</Link>
+                  <h6 className="fw-bold">🌟 Career & Learning Opportunities</h6>
+                  <p className="text-muted small">
+                    Jobs, internships, scholarships and learning resources.
+                  </p>
+                  <Link href="/career-learning" className="btn btn-info btn-sm">
+                    Explore Opportunities
+                  </Link>
                 </div>
               </div>
             </div>
-          )}
-        </div>
 
-        <footer className="mt-5 text-center text-muted" style={{ fontSize: '14px' }}>
-          &copy; {new Date().getFullYear()} SkillLink – Empowering BUK Students
-        </footer>
+            {/* Tech News */}
+            <div className="col-12 col-md-6 slide-card">
+              <div className="card h-100 border-0 shadow-sm dashboard-card">
+                <div className="card-body">
+                  <h6 className="fw-bold">📰 Tech News & Insights</h6>
+                  <p className="text-muted small">
+                    Latest updates in technology and software development.
+                  </p>
+
+                  {headlines.length > 0 && (
+                    <a
+                      href={headlines[currentIndex].url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="d-block mt-3 p-3 text-decoration-none breaking-box"
+                    >
+                      <span className="badge bg-danger mb-2">Breaking</span>
+                      <div className="fw-semibold">
+                        {headlines[currentIndex].title}
+                      </div>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Admin */}
+            {regNumber === adminReg && (
+              <div className="col-12 col-md-4 mx-auto slide-card">
+                <div className="card border-0 shadow-sm bg-warning-subtle dashboard-card">
+                  <div className="card-body text-center">
+                    <div className="icon-circle mb-3">👑</div>
+                    <h6 className="fw-bold text-danger">Admin Panel</h6>
+                    <p className="text-muted small">
+                      Manage all skills and learning resources.
+                    </p>
+                    <Link href="/admin-learnable-skills" className="btn btn-danger btn-sm">
+                      Go to Admin
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <footer className="text-center mt-5 text-muted small">
+            &copy; {new Date().getFullYear()} SkillLink – Empowering BUK Computing Students
+          </footer>
+        </div>
       </div>
-    </>
-  );
+    </div>
+
+    {/* ===== Styles ===== */}
+    <style jsx>{`
+      .dashboard-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .dashboard-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+
+      .slide-card .dashboard-card {
+  opacity: 0;
+  animation: fallSlide 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* ===== Staggered falling ===== */
+.slide-card:nth-child(1) .dashboard-card { animation-delay: 0.05s; }
+.slide-card:nth-child(2) .dashboard-card { animation-delay: 0.12s; }
+.slide-card:nth-child(3) .dashboard-card { animation-delay: 0.19s; }
+.slide-card:nth-child(4) .dashboard-card { animation-delay: 0.26s; }
+.slide-card:nth-child(5) .dashboard-card { animation-delay: 0.33s; }
+.slide-card:nth-child(6) .dashboard-card { animation-delay: 0.40s; }
+.slide-card:nth-child(7) .dashboard-card { animation-delay: 0.47s; }
+.slide-card:nth-child(8) .dashboard-card { animation-delay: 0.54s; }
+
+/* ===== Hover & Touch lift (desktop + mobile) ===== */
+.dashboard-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.dashboard-card:hover,
+.dashboard-card:active {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+/* ===== Falling animation ===== */
+@keyframes fallSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+      .icon-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #6366f1, #22c55e);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin: 0 auto;
+      }
+
+      .breaking-box {
+        background: #fff;
+        border-left: 4px solid #dc3545;
+        border-radius: 6px;
+      }
+
+      .dark-mode {
+        color: #e5e7eb;
+      }
+      .dark-mode .card {
+        background: #020617;
+        color: #e5e7eb;
+      }
+      .dark-mode .text-muted {
+        color: #94a3b8 !important;
+      }
+    `}</style>
+  </>
+);
 }
