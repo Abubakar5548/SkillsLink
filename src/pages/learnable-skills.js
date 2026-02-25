@@ -268,7 +268,7 @@ export default function LearnableSkills({ skills }) {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  height: 160px; /* fixed height */
+  height: 130px; /* fixed height */
 }
 
 .youtube-card img {

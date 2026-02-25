@@ -111,7 +111,7 @@ export default function Dashboard() {
             {[
               {
                 icon: '📚',
-                title: 'Teach a Skill',
+                title: 'Tutor/Post a Skill',
                 desc: 'Upload PDF or learning links.',
                 link: '/post-learnable-skill',
                 btn: 'Teach',

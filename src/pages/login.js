@@ -46,7 +46,7 @@ export default function Login() {
         <div className="card p-4 shadow" style={{ maxWidth: '400px', width: '100%' }}>
           <div className="text-center mb-3">
             <img src="/buk-logo.jpg" alt="BUK" width="50" />
-            <h4 className="mt-2">Login – BUK Students</h4>
+            <h4 className="mt-2">Login</h4>
           </div>
 
           <form onSubmit={handleLogin}>
