@@ -26,6 +26,9 @@ function MyApp({ Component, pageProps }) {
               <li className="nav-item">
                 <Link className="nav-link" href="/signup">Sign Up</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="/about">About</Link>
+              </li>
             </ul>
           </div>
         </div>

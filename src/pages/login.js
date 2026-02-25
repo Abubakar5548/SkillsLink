@@ -92,6 +92,11 @@ export default function Login() {
             <p className="text-center mt-3">
               Don`t have an account? <Link href="/signup">Signup</Link>
             </p>
+            <div className="text-end mt-2">
+              <Link href ="/forgot-password" classname="text-decoration-none">
+              Forgot Password?
+              </Link>
+            </div>
           </form>
         </div>
       </div>

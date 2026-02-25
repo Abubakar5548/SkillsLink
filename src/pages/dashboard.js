@@ -68,7 +68,7 @@ export default function Dashboard() {
   return (
   <>
     <Head>
-      <title>SkillsLink – Dashboard</title>
+      <title>Skills Link – Dashboard</title>
     </Head>
 
     {/* ===== Dark Mode Wrapper ===== */}
@@ -90,9 +90,6 @@ export default function Dashboard() {
               <h2 className="fw-bold">Welcome to SkillsLink 👋</h2>
               <p className="text-muted mb-1">
                 Registration Number: <strong>{regNumber}</strong>
-              </p>
-              <p className="text-muted">
-                Email: <strong>{email}</strong>
               </p>
             </div>
 
@@ -182,6 +179,9 @@ export default function Dashboard() {
                   <p className="text-muted small">
                     Latest updates in technology and software development.
                   </p>
+                  <Link href="/tech-news" className="btn btn-danger btn-sm">
+                      View News
+                    </Link>
 
                   {headlines.length > 0 && (
                     <a
@@ -220,7 +220,7 @@ export default function Dashboard() {
           </div>
 
           <footer className="text-center mt-5 text-muted small">
-            &copy; {new Date().getFullYear()} SkillLink – Empowering BUK Computing Students
+            &copy; {new Date().getFullYear()} SkillLink – Empowering BUK Computing Students (FoC)
           </footer>
         </div>
       </div>

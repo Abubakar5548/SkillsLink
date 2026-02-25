@@ -53,7 +53,7 @@ export default function Signup() {
         <div className="card shadow-lg border-0 p-4" style={{ maxWidth: '450px', width: '100%', borderRadius: '1rem' }}>
           <div className="text-center">
             <img src="/buk-logo.jpg" alt="BUK Logo" width="70" className="mb-3" />
-            <h4 className="text-primary fw-bold">SkillsLink</h4>
+            <h4 className="text-primary fw-bold">SkillsLink Sign-Up</h4>
             <p className="text-muted mb-4" style={{ fontSize: '14px' }}>Create your account using your registration number</p>
           </div>
           <form onSubmit={handleSubmit}>
@@ -63,18 +63,17 @@ export default function Signup() {
                 type="text"
                 name="regNumber"
                 className="form-control"
-                placeholder="CST/21/COM/00707"
+                
                 required
                 onChange={handleChange}
               />
             </div>
             <div className="form-group mb-3">
-              <label>BUK Email</label>
+              <label>Email</label>
               <input
                 type="email"
                 name="email"
                 className="form-control"
-                placeholder="yourname@buk.edu.ng"
                 required
                 onChange={handleChange}
               />

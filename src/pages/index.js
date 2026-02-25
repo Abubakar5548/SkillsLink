@@ -131,7 +131,7 @@ export default function Home() {
           </div>
 
           <footer className="mt-5 text-center text-muted small">
-            &copy; {new Date().getFullYear()} SkillLink – Empowering FoC Students
+            &copy; {new Date().getFullYear()} SkillLink – Empowering BUK Computing Students FoC Students
           </footer>
         </div>
       </div>
